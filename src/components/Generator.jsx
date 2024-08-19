@@ -1,9 +1,14 @@
 import React from 'react'
 import SectionWrapper from './SectionWrapper'
 
-function Header(){
+function Header(props){
+  const {index, title, description} = props
   return(
-    
+    <div>
+      <div>
+        <p>{}</p>
+      </div>
+    </div>
   )
 }
 
