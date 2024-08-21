@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import SectionWrapper from './SectionWrapper'
-import { WORKOUTS } from '../utils/excercises'
+import { SCHEMES, WORKOUTS } from '../utils/excercises'
 
 function Header(props) {
   const { index, title, description } = props
@@ -22,10 +22,10 @@ export default function Generator() {
   const [showModal, setShowModal] = useState(false)
   const [poison, setPoison] = useState('individual')
   const [muscles, setMuscles] = useState([])
-  const [goals, setGoals] = useState('strength_power')
+  const [goal, setGoal] = useState('strength_power')
 
   //let showModal = false
-  
+
   function toggleModal() {
     setShowModal(!showModal)
   }
@@ -40,7 +40,9 @@ export default function Generator() {
           {/*mapping out WORKOUTS from utils to create buttons*/ }
           return (
 
-            <button className='bg-slate-950 border border-blue-400 py-3 rounded-lg duration-200 hover:border-blue-600' key={typeIndex}>
+            <button onClick={() => {
+              setPoison(type)
+            }} className={'bg-slate-950 border rounded-lg duration-200 hover:border-blue-600 py-3 ' + (type === poison ? 'border-blue-600' : 'border-blue-400')} key={typeIndex}>
 
               <p className='capitalize'>{type.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
 
@@ -59,22 +61,26 @@ export default function Generator() {
           <i className="fa-solid fa-caret-down absolute right-3 top-1/2 -translate-y-1/2"></i>
         </button>
         {showModal && (
-          <div>Modal</div>
+          <div className='flex flex-col p-3'>
+            {}
+          </div>
         )}
       </div>
 
 
-      <Header index={'01'} title={'Pick your poison'} description={'Select the workout you wish to endure.'} />
+      <Header index={'03'} title={'Become Juggernaut'} description={'Select your ultimate objective.'} />
 
-      <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
+      <div className='grid grid-cols-3 gap-4'>
 
-        {Object.keys(SCHEMES).map((type, typeIndex) => {
+        {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
           {/*mapping out WORKOUTS from utils to create buttons*/ }
           return (
 
-            <button className='bg-slate-950 border border-blue-400 py-3 rounded-lg duration-200 hover:border-blue-600' key={typeIndex}>
+            <button onClick={() => {
+              setGoal(scheme)
+            }} className={'bg-slate-950 border rounded-lg duration-200 hover:border-blue-600 py-3 ' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} key={schemeIndex}>
 
-              <p className='capitalize'>{type.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
+              <p className='capitalize'>{scheme.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
 
             </button>
           )
