@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import SectionWrapper from './SectionWrapper'
 import { WORKOUTS } from '../utils/excercises'
 
-function Header(props){
-  const {index, title, description} = props
-  return(
+function Header(props) {
+  const { index, title, description } = props
+  return (
     <div className='flex flex-col gap-4'>
       <div className='flex justify-center items-center gap-2'>
 
@@ -19,38 +19,66 @@ function Header(props){
 
 export default function Generator() {
 
-let showModal = false
+  const [showModal, setShowModal] = useState(false)
+  const [poison, setPoison] = useState('individual')
+  const [muscles, setMuscles] = useState([])
+  const [goals, setGoals] = useState('strength_power')
+
+  //let showModal = false
+  
+  function toggleModal() {
+    setShowModal(!showModal)
+  }
 
   return (
     <SectionWrapper header={'Generate Your Workout'} title={['It\'s', 'Huge', ' o\'Clock']}>
-      <Header index={'01'} title={'Pick your poison'} description={'Select the workout you wish to endure.'}/>
+      <Header index={'01'} title={'Pick your poison'} description={'Select the workout you wish to endure.'} />
 
       <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
 
-       {Object.keys(WORKOUTS).map((type, typeIndex) =>{ {/*mapping out WORKOUTS from utils to create buttons*/}
-         return(
-           
-           <button className='bg-slate-950 border border-blue-400 py-3 rounded-lg duration-200 hover:border-blue-600' key={typeIndex}>
+        {Object.keys(WORKOUTS).map((type, typeIndex) => {
+          {/*mapping out WORKOUTS from utils to create buttons*/ }
+          return (
 
-            <p className='capitalize'>{type.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
+            <button className='bg-slate-950 border border-blue-400 py-3 rounded-lg duration-200 hover:border-blue-600' key={typeIndex}>
 
-          </button>
-       )
-      })}
+              <p className='capitalize'>{type.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
+
+            </button>
+          )
+        })}
       </div>
 
 
 
-      <Header index={'02'} title={'Lock on targets'} description={'Select the muscles judged for annihilation.'}/>
+      <Header index={'02'} title={'Lock on targets'} description={'Select the muscles judged for annihilation.'} />
 
-      <div className='bg-slate-950 p-3 border border-solid border-blue-400 rounded-lg'>
-        <div className='relative flex items-center justify-center'>
+      <div className='flex flex-col bg-slate-950 border border-solid border-blue-400 rounded-lg'>
+        <button onClick={toggleModal} className='relative p-3 flex items-center justify-center'>
           <p>Select muscle groups</p>
           <i className="fa-solid fa-caret-down absolute right-3 top-1/2 -translate-y-1/2"></i>
-        </div>
+        </button>
         {showModal && (
-          <div></div>
-        ) }
+          <div>Modal</div>
+        )}
+      </div>
+
+
+      <Header index={'01'} title={'Pick your poison'} description={'Select the workout you wish to endure.'} />
+
+      <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
+
+        {Object.keys(SCHEMES).map((type, typeIndex) => {
+          {/*mapping out WORKOUTS from utils to create buttons*/ }
+          return (
+
+            <button className='bg-slate-950 border border-blue-400 py-3 rounded-lg duration-200 hover:border-blue-600' key={typeIndex}>
+
+              <p className='capitalize'>{type.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
+
+            </button>
+          )
+        })}
       </div>
 
     </SectionWrapper>
