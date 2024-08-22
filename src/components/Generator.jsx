@@ -18,12 +18,12 @@ function Header(props) {
   )
 }
 
-export default function Generator() {
+export default function Generator(props) {
+
+  const { muscles, setMuscles, poison, setPoison, goal, setGoal, updateWorkout } = props
 
   const [showModal, setShowModal] = useState(false)
-  const [poison, setPoison] = useState('individual')
-  const [muscles, setMuscles] = useState([])
-  const [goal, setGoal] = useState('strength_power')
+
 
   //let showModal = false
 
@@ -121,7 +121,7 @@ export default function Generator() {
 
       <Header index={'03'} title={'Become Juggernaut'} description={'Select your ultimate objective.'} />
 
-      <div className='grid grid-cols-3 gap-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
 
         {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
           {/*mapping out WORKOUTS from utils to create buttons*/ }
@@ -129,8 +129,8 @@ export default function Generator() {
 
             <button onClick={() => {
               setGoal(scheme)
-            }} 
-            className={'bg-slate-950 border rounded-lg duration-200 hover:border-blue-600 py-3 px-4' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} key={schemeIndex}>
+            }}
+              className={'bg-slate-950 border rounded-lg duration-200 hover:border-blue-600 py-3 px-4' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} key={schemeIndex}>
 
               <p className='capitalize'>{scheme.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
 
@@ -139,7 +139,7 @@ export default function Generator() {
         })}
       </div>
 
-      <Button text={'Formulate'}></Button>
+      <Button func={updateWorkout} text={'Formulate'}></Button>
     </SectionWrapper>
   )
 }
