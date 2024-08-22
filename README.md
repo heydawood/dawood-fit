@@ -1,3 +1,3 @@
 # dawood-fit
 
-The ultimate gym training app built with react & tailwindCSS
+The ultimate gym training app built with React & TailwindCSS
