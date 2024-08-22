@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { renderIntoDocument } from 'react-dom/test-utils'
 
 export default function ExcerciseCard(props) {
   const { excercise, i } = props

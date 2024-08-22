@@ -8,10 +8,10 @@ export default function Hero() {
 
         <p className='uppercase font-medium'>It's time to get</p>
 
-        <h1 className='uppercase font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>dawood<span className='text-blue-400'>NORMOUS</span></h1>
+        <h1 className='uppercase font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>SWOLE<span className='text-blue-400'>NORMOUS</span></h1>
 
       </div>
-      <p className='text-sm md:text-base font-light'>I hereby acknowledgement that I may become <span className='text-blue-400 font-medium'>unbelievably dawoodnormous</span> and accept all risks of becoming the local <span className='text-blue-400 font-medium'>mass montrosity</span>, afflicted with severe body dismorphia, unable to fit through doors.</p>
+      <p className='text-sm md:text-base font-light'>I hereby acknowledgement that I may become <span className='text-blue-400 font-medium'>unbelievably swolenormous</span> and accept all risks of becoming the local <span className='text-blue-400 font-medium'>mass montrosity</span>, afflicted with severe body dismorphia, unable to fit through doors.</p>
 
       <Button func={()=>
         window.location.href = '#generate'
