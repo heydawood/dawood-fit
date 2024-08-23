@@ -71,7 +71,7 @@ export default function Generator(props) {
                 setMuscles([])
                 setPoison(type)
               }}
-              className={'bg-slate-950 border rounded-lg duration-200 hover:border-blue-600 py-3 px-4 ' + (type === poison ? 'border-blue-600' : 'border-blue-400')} key={typeIndex}>
+              className={'bg-slate-950 border-2 rounded-lg duration-200 hover:border-blue-800 py-3 px-4 ' + (type === poison ? 'border-blue-800' : 'border-blue-400')} key={typeIndex}>
 
               <p className='capitalize'>{type.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
 
@@ -130,7 +130,7 @@ export default function Generator(props) {
             <button onClick={() => {
               setGoal(scheme)
             }}
-              className={'bg-slate-950 border rounded-lg duration-200 hover:border-blue-600 py-3 px-4 ' + (scheme === goal ? 'border-blue-600' : 'border-blue-400')} key={schemeIndex}>
+              className={'bg-slate-950 border-2 rounded-lg duration-200 hover:border-blue-800 py-3 px-4 ' + (scheme === goal ? 'border-blue-800' : 'border-blue-400')} key={schemeIndex}>
 
               <p className='capitalize'>{scheme.replaceAll('_', ' ')}</p>      {/* replaceAll is javascript fucntion to replace underscores with space*/}
 
