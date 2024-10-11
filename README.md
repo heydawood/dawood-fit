@@ -44,24 +44,6 @@ yarn start
 
 4. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
-## 📂 Project Structure
-
-Here is an overview of the project structure:
-
-<CodeBlock language="bash">
-dawood-fit/
-├── public/
-│   ├── index.html
-│   └── ...
-├── src/
-│   ├── components/  # Reusable React components
-│   ├── pages/       # Page-level components
-│   ├── App.js       # Main app entry
-│   └── index.js     # React DOM rendering
-├── tailwind.config.js # Tailwind CSS configuration
-├── package.json
-└── README.md
-</CodeBlock>
 
 ## 📦 Dependencies
 
