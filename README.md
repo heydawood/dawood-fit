@@ -49,7 +49,7 @@ yarn start
 Here is an overview of the project structure:
 
 <CodeBlock language="bash">
-{`dawood-fit/
+dawood-fit/
 ├── public/
 │   ├── index.html
 │   └── ...
@@ -61,7 +61,6 @@ Here is an overview of the project structure:
 ├── tailwind.config.js # Tailwind CSS configuration
 ├── package.json
 └── README.md
-`}
 </CodeBlock>
 
 ## 📦 Dependencies
