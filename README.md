@@ -27,7 +27,7 @@ Make sure you have **Node.js** and **npm** or **yarn** installed on your machine
 
 
 <CodeBlock language="bash">
-{`git clone https://github.com/heydawood/dawood-fit.git
+git clone https://github.com/heydawood/dawood-fit.git
 cd dawood-fit
 
 # Install dependencies
@@ -39,7 +39,6 @@ yarn install
 npm start
 # or
 yarn start
-`}
 </CodeBlock>
 
 4. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
