@@ -25,7 +25,7 @@ Make sure you have **Node.js** and **npm** or **yarn** installed on your machine
 
 ### Installation
 
-{/* Use a CodeBlock component for better highlighting if desired */}
+
 <CodeBlock language="bash">
 {`git clone https://github.com/heydawood/dawood-fit.git
 cd dawood-fit
